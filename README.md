@@ -1,26 +1,111 @@
-# Thesis template for Latex
-(Norwegian description below)
+# Master's Thesis LaTeX Template
 
-This repo contains a template for a thesis written in Latex, made by me for my master's degree from the Norwegian University of Science and Technology (NTNU) in 2022. I have designed this template to fit for a scientific dissertation with the basic build-up for a report, and included explanations for the design choices and how to use it (see comments in the latex-file). The template aims to remain quite simple and easy to understand, with explanations for every implementation, such that it is both uncomplicated/straightforward to understand and use the LaTeX setup and simple to adjust and alter to your specific needs.
+[![PDF](https://img.shields.io/badge/PDF-latest-blue)](./build/main.pdf)
 
-## How to use:
-**Method 1:**
-The template is available in the official Overleaf templates. In the Overleaf navigation bar press "Templates" and search "Thesis template NTNU". Select the one samed as such made by Nina Salvesen (if you want this template), and select "Open as template". A file will be made in your porjects automatically.
+A professional LaTeX template for writing a master's thesis, originally created by Nina Salvesen for NTNU and modified by Torbjørn Wiik for B5 format with enhanced tooling.
 
-**Method 2:**
-Press the green code button on the top right, and click download ZIP. In overleaf or Latex click "New Project" and then "Upload Project". Drag the dowloaded zipfile from your files.
+## Features
 
-### License:
+- **Clean Structure**: Organized chapters, figures, and bibliography
+- **Professional Styling**: Customizable chapter styles and headers
+- **Cross-References**: cleveref support for intelligent cross-references
+- **IEEE Citations**: Numeric citation style with biber backend
+- **B5 Paper Format**: Compact size suitable for printing and distribution
+- **Dev Containers**: Containerized TeX Live environment for consistency
+- **Spell Checking**: Grammar and spell checking with LTeX (English US)
+- **Automated Builds**: latexmk configuration for reliable PDF generation
+
+## Quick Start
+
+### Prerequisites
+
+- **VS Code** with the [Dev Containers extension](https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-containers)
+- **Docker** installed and running
+
+### Setup Instructions
+
+1. Clone or fork this repository
+2. Open the project folder in VS Code
+3. VS Code will prompt "Reopen in Container" → click it
+4. The container will build automatically (first time may take a few minutes)
+5. Once complete, you're ready to edit and build
+
+### Building the PDF
+
+Inside the container:
+- **Build**: Press `Cmd+Alt+B` or use Command Palette → "LaTeX Workshop: Build LaTeX project"
+- **View**: The PDF generates to `build/main.pdf`
+- **Auto-build**: Save changes to auto-compile (configurable)
+
+See [`.devcontainer/README.md`](.devcontainer/README.md) for detailed container setup information.
+
+## Project Structure
+
+```
+.
+├── main.tex                 # Main document file
+├── setup.tex               # Preamble with all packages and configuration
+├── bibliography.bib        # BibTeX database
+├── .latexmkrc             # latexmk build configuration
+├── Chapters/              # Chapter files (00Abstract through 08Appendix)
+├── Figures/               # Figures and images
+├── .devcontainer/         # Dev Container configuration
+│   ├── Dockerfile         # Container image definition
+│   ├── devcontainer.json  # VS Code dev container config
+│   └── README.md         # Container setup guide
+└── .vscode/              # VS Code settings
+    └── settings.json     # Editor configuration (LTeX, build settings)
+```
+
+## Customization
+
+### Paper Size and Margins
+
+Edit `setup.tex`:
+```latex
+\documentclass[b5paper, 12pt]{report}
+\usepackage[lmargin=1.25in, rmargin=0.9in, tmargin=0.8in, bmargin=0.8in]{geometry}
+```
+
+### Bibliography Style
+
+Edit `setup.tex` to change `style=ieee` to other styles (e.g., `alphabetic`, `authoryear`).
+
+### Language and Spell Checking
+
+Edit `.vscode/settings.json`:
+```json
+"ltex.language": "en-US",
+"ltex.dictionary": { "en-US": ["custom", "words"] }
+```
+
+## Build Output
+
+- **PDF**: `build/main.pdf`
+- **Temporary Files**: Stored in `build/` directory (kept out of working directory)
+- **Git**: Add `build/` to `.gitignore` (already configured)
+
+## License
+
 LaTeX Project Public License (LPPL) 1.3c.
 
-### Disclaimer: 
-This is not an official template issued from NTNU or any other university, but my personal template that I share in the hopes that someone writing their thesis for their bachelor/master/doctorate/whatever may find it useful and may save time with their report set-up. 
-NTNU as far as I know (nov, 2022) does not have any official template for writing a thesis, so feel free to use this in your own dissertation.
+## Attribution
 
+- **Original Template**: Nina Salvesen (NTNU, 2022)
+- **Modifications**: Torbjørn Wiik (2026)
+  - B5 paper format
+  - Dev Container setup
+  - IEEE citation style
+  - cleveref support
+  - LTeX grammar checking
 
-# Mal for avhandling i Latex
-Dette repoet inneholder en mal for en avhandling/sluttrapport skrevet i Latex, som ble utviklet av meg for min masteroppgave fra Norges Teknisk- og Naturvitenskapelige Universitet (NTNU) i 2022. Jeg designet denne malen for å passe vitenskapelige avhandlinger med en vanlig oppbygning for rapporter, og har inkludert forklaringer for designvalgene samt hvordan bruke den (se kommentarer i latex-filen). Malen sikter på å være enkel å forstå seg på, med forklaringer for alt som er implementert, slik at det både er ukomplisert/rett fram å skjønne seg på LaTeX-oppsettet og enkelt å justere og endre malen til dine spesifikke behov.
+## Disclaimer
 
-### Forbehold:
-Dette er ikke en offisiell mal utstedt av NTNU eller noe annet universitet, men min personlige mal som jeg deler i håp om at noen som skriver deres avhandling for deres bachelor/master/doktorgrad/hva enn kan bruke den og spare tid på å sette opp selve dokumentet.
-NTNU har, så langt jeg vet (nov, 2022), ikke noe offisiell mal for å skrive en avhandling, så bare bruk denne malen i din egen rapport om du ønsker.
+This is not an official NTNU template. It's a community template designed to simplify thesis writing. Feel free to modify it for your specific needs.
+
+## References
+
+- [LaTeX Workshop](https://github.com/James-Yu/LaTeX-Workshop)
+- [TeX Live Documentation](https://tug.org/texlive/)
+- [VS Code Dev Containers](https://code.visualstudio.com/docs/devcontainers/containers)
+- [biblatex Documentation](http://mirrors.ctan.org/macros/latex/contrib/biblatex/doc/biblatex.pdf)
