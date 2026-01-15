@@ -48,8 +48,8 @@
 % Include this if you want to include URLs in the thesis
 \usepackage{listings}
 % Include this if you want to include code in the thesis
-\usepackage{algorithm}
-\usepackage{algpseudocode}
+% \usepackage{algorithm}
+% \usepackage{algpseudocode}
 \usepackage{minted}
 
 % ============================================================================
@@ -126,9 +126,8 @@
             sorting=none,
             urldate=long,
             maxcitenames=2,
-            natbib=true,
-            cite=numeric,
-            citestyle=numeric-comp]{biblatex}
+            mincitenames=1,
+            natbib=true]{biblatex}
 % Customize the look of your citations and bibliography
 \addbibresource{bibliography.bib}
 % Declare the bibliography resource
