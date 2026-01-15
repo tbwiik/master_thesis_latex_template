@@ -35,7 +35,19 @@ A professional LaTeX template for writing a master's thesis, originally created 
 Inside the container:
 - **Build**: Press `Cmd+Alt+B` or use Command Palette → "LaTeX Workshop: Build LaTeX project"
 - **View**: The PDF generates to `build/main.pdf`
-- **Auto-build**: Save changes to auto-compile (configurable)
+- **Auto-build**: Save changes to auto-compile (enabled by default)
+
+#### Using Makefile (Docker)
+
+If you prefer command-line builds or don't use Dev Containers:
+
+```bash
+make help       # Show available commands
+make build      # Build PDF using Docker
+make watch      # Watch for changes and rebuild automatically
+make clean      # Remove auxiliary files
+make distclean  # Remove all build files including PDF
+```
 
 See [`.devcontainer/README.md`](.devcontainer/README.md) for detailed container setup information.
 
@@ -47,6 +59,7 @@ See [`.devcontainer/README.md`](.devcontainer/README.md) for detailed container 
 ├── setup.tex               # Preamble with all packages and configuration
 ├── bibliography.bib        # BibTeX database
 ├── .latexmkrc             # latexmk build configuration
+├── Makefile               # Docker-based build commands
 ├── Chapters/              # Chapter files (00Abstract through 08Appendix)
 ├── Figures/               # Figures and images
 ├── .devcontainer/         # Dev Container configuration
@@ -54,7 +67,7 @@ See [`.devcontainer/README.md`](.devcontainer/README.md) for detailed container 
 │   ├── devcontainer.json  # VS Code dev container config
 │   └── README.md         # Container setup guide
 └── .vscode/              # VS Code settings
-    └── settings.json     # Editor configuration (LTeX, build settings)
+    └── settings.json     # Editor configuration (LTeX, LaTeX Workshop)
 ```
 
 ## Customization
