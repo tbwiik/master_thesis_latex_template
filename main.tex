@@ -12,33 +12,35 @@
 %the title page should be an odd page (right hand side)
 
 \begin{titlepage}
-\newgeometry{left=2.5cm, right=2.5cm, top=3cm, bottom=3cm}
-\vspace*{1.5cm}
+\newgeometry{left=0.14\paperwidth, right=0.14\paperwidth, top=0.12\paperheight, bottom=0.12\paperheight}
+\vspace*{3\baselineskip}
 
-\noindent  \textcolor{gray}{\large Nina Salvesen} \\
-\vspace{1cm}
+{\raggedright
+\textcolor{gray}{\large Nina Salvesen}\par
+\vspace{2\baselineskip}
 
-\noindent \textbf{\Large The title of your master's thesis should be written here} \\
-\vspace{0.5cm}
+\textbf{\Large The title of your master's thesis should be written here}\par
+\vspace{\baselineskip}
 
-\noindent {\large Any undertitle is written here} \\
+{\large Any undertitle is written here}\par
+}
 
+\vfill
 
+{\raggedright
+Master's thesis in Physics and Mathematics\par
+Supervisor: Supervisor Name\par
+Co-supervisor: Co-supervisor Name\par
+June 2022\par
 
-\vspace{7cm}
-\noindent Master's thesis in Physics and Mathematics \\
-Supervisor: Supervisor Name \\
-Co-supervisor: Co-supervisor Name \\
-June 2022 \\
+\vspace{\baselineskip}
+Norwegian University of Science and Technology\par
+Faculty of Natural Sciences\par
+Department of Physics\par
+}
 
-\vspace{0.2cm}
-\noindent Norwegian University of Science and Technology \\
-Faculty of Natural Sciences \\
-Department of Physics \\
-
-\begin{figure}[h]
-    \includegraphics[width=0.28\textwidth]{Figures/ntnu_basic.png}
-\end{figure}
+\vspace{\baselineskip}
+\noindent\includegraphics[width=0.28\textwidth]{Figures/ntnu_basic.png}
 \end{titlepage}
 \restoregeometry
 \myemptypage %empty page such that the abstract starts at the first right hand side after the title page

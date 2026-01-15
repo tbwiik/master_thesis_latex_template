@@ -30,24 +30,34 @@
 % Page Layout and Margins
 % ============================================================================
 \usepackage[b5paper,
-            left=2.5cm,
-            right=2cm,
-            top=2.5cm,
-            bottom=2.5cm,
-            headheight=14pt,
-            headsep=0.8cm,
-            footskip=1.2cm]{geometry}
-% Sets the margins for B5 paper (176mm x 250mm)
+            left=0.14\paperwidth,      % ~14% of paper width (≈2.5cm on B5)
+            right=0.11\paperwidth,     % ~11% of paper width (≈2cm on B5)
+            top=0.10\paperheight,      % ~10% of paper height (≈2.5cm on B5)
+            bottom=0.10\paperheight,   % ~10% of paper height (≈2.5cm on B5)
+            headheight=1.5\baselineskip, % Relative to line height
+            headsep=2ex,               % Relative to x-height
+            footskip=3ex]{geometry}    % Relative to x-height
+% Sets the margins for B5 paper using relative units
 \setcounter{tocdepth}{2}
 % Table of contents number depth for subsections (2 = x.x.x)
 \setcounter{secnumdepth}{4}
 % Numbering depth for headers for subsections in the text (4 = x.x.x.x)
 
 % ============================================================================
+% Text Formatting and Line Breaking
+% ============================================================================
+\usepackage[final]{microtype}       % Improved typography (kerning, tracking, etc.)
+\usepackage{ragged2e}               % Better ragged text commands
+\tolerance=200                      % Reasonable tolerance for line breaking
+\emergencystretch=2em               % Extra stretch as last resort for overfull lines
+\setlength{\parskip}{0.5ex plus 0.2ex minus 0.1ex}  % Flexible paragraph spacing
+
+% ============================================================================
 % URLs and Code Listings
 % ============================================================================
-\usepackage{url}
-% Include this if you want to include URLs in the thesis
+\usepackage[hyphens,spaces,obeyspaces]{url}
+% Include this if you want to include URLs in the thesis (with line breaking)
+\urlstyle{same}                     % Use same font as surrounding text for URLs
 \usepackage{listings}
 % Include this if you want to include code in the thesis
 % \usepackage{algorithm}
@@ -123,6 +133,7 @@
 % ============================================================================
 % Bibliography
 % ============================================================================
+\usepackage{csquotes}               % Required by biblatex for proper quotation handling
 \usepackage[backend=biber,
             style=ieee,
             sorting=none,

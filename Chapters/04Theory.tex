@@ -1,16 +1,15 @@
-%equations, bib. \\
+%equations, bib.
 
 \section{Equations}
 
-A simple equation can be included as: \\
+A simple equation can be included as:
 
 \begin{equation}
         r = 2\pi^{2}
         \label{eqn:simple_eqn}
-\end{equation} \\
+\end{equation}
 
-
-\noindent The text below shows an example of how to align equations on the equal sign, with only one reference for both. This may be useful for when they are linked and are actually only one equation but splitting them up makes it more readable. \\
+The text below shows an example of how to align equations on the equal sign, with only one reference for both. This may be useful for when they are linked and are actually only one equation but splitting them up makes it more readable.
 
 \begin{equation}
 \begin{aligned}
@@ -18,9 +17,9 @@ A simple equation can be included as: \\
         d &= 2R\cdot\arcsin(\sqrt{a})
 \end{aligned}
 \label{eqn:haversine}
-\end{equation} \\
+\end{equation}
 
-\noindent The whole equation can be referenced as "equation \eqref{eqn:haversine}", here showing the Haversine formula. One may also align sub-equations such that they are numbered the same but have a letter differentiating them as shown below. This can be used when they are linked, but you will need to reference both individual parts.
+The whole equation can be referenced as "equation \eqref{eqn:haversine}", here showing the Haversine formula. One may also align sub-equations such that they are numbered the same but have a letter differentiating them as shown below. This can be used when they are linked, but you will need to reference both individual parts.
 
 \begin{subequations}
 \begin{align}
@@ -30,19 +29,19 @@ A simple equation can be included as: \\
         & \quad = \sum_{q=1}^{k} \delta_{rq} SSD \label{eq:sse}
 \end{align}
 \label{eqn:subeqn}
-\end{subequations} \\
+\end{subequations}
 
-\noindent These equations can be refrenced by their spesific sub-equation as "equation \eqref{eq:ssd}", or by the whole group as "equations \eqref{eqn:subeqn}". The "double backslashes" in the .tex creates line spaces and gives more room around the equations and paragraphs. Use them as you think feels right. 
+These equations can be refrenced by their spesific sub-equation as "equation \eqref{eq:ssd}", or by the whole group as "equations \eqref{eqn:subeqn}". The "double backslashes" in the .tex creates line spaces and gives more room around the equations and paragraphs. Use them as you think feels right.
 
 
 
 \section{Tables and footnotes}
 
-Here is an example of both a regular table with data and a table with split headers, for scientific usage. Do not use horizontal/vertical rulers between the data, or encase the table with rulers. \\
+Here is an example of both a regular table with data and a table with split headers, for scientific usage. Do not use horizontal/vertical rulers between the data, or encase the table with rulers.
 
 \begin{table}[ht!]
 \centering
-    \begin{tabular}{ m{3cm} m{2.5cm} m{2.5cm} m{2.5cm} m{2cm} } 
+    \begin{tabular}{ p{0.18\textwidth} p{0.16\textwidth} p{0.16\textwidth} p{0.16\textwidth} p{0.14\textwidth} } 
     \toprule
     \toprule
     \textbf{Statistic} & \textbf{Velocity} & \textbf{Altitude} & \textbf{1/Angle} & \textbf{Temp.} \\
@@ -65,7 +64,7 @@ Here is an example of both a regular table with data and a table with split head
 
 \begin{table}[ht!]
 \centering
-    \begin{tabular}{ m{3cm} m{5cm} m{3cm} } 
+    \begin{tabular}{ p{0.15\textwidth} p{0.35\textwidth} p{0.20\textwidth} } 
     \toprule
     \toprule
     \textbf{Area 1} & \textbf{Start date} & \textbf{End date} \\
@@ -96,9 +95,9 @@ Here is an example of both a regular table with data and a table with split head
 
 Figure \ref{fig:latlong} is included as an example. The square brackets before the caption description contains the title of the figure, which is what will be written in the list of figures. This should be short and concise. The same layout applies to tables and other floats. Remember to change the title as well as the caption if you are copying these examples. In the list of figures and tables all the different floats will be grouped together by chapter. Remember to always reference all your figures and tables in the text at least once.
 
-\begin{figure}[H]
+\begin{figure}[ht!]
   \centering
-  \includegraphics[width=0.9\textwidth]{Figures/latlong.png}
+  \includegraphics[width=0.85\textwidth]{Figures/latlong.png}
   \caption[Illustration of latitude and longitude]{Illustration of the earth, and how latitudes and longitudes are calculated with respect to the equator and the prime meridian.}
   \label{fig:latlong}
 \end{figure}
