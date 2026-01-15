@@ -1,0 +1,42 @@
+# LaTeX Compilation Artifacts
+*.aux
+*.fls
+*.log
+*.fdb_latexmk
+*.synctex.gz
+*.out
+*.toc
+*.lof
+*.lot
+*.bbl
+*.blg
+*.run.xml
+*.bcf
+
+# Build Directory (but keep the PDF)
+build/
+!build/main.pdf
+
+# OS-specific Files
+.DS_Store
+Thumbs.db
+*.swp
+*.swo
+*~
+
+# Editor Backups and Temporary Files
+*.bak
+*.backup
+*~
+
+# VS Code
+.vscode/extensions/
+.vscode/ipch/
+
+# macOS
+.AppleDouble
+.LSOverride
+
+# Windows
+$RECYCLE.BIN/
+ehthumbs.db
