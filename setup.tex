@@ -41,6 +41,9 @@
 % Include this if you want to include URLs in the thesis
 \usepackage{listings}
 % Include this if you want to include code in the thesis
+\usepackage{algorithm}
+\usepackage{algpseudocode}
+\usepackage{minted}
 
 % ============================================================================
 % Mathematical Packages
@@ -81,6 +84,28 @@
 % Change counter for tables within sections
 
 % ============================================================================
+% Cross-References
+% ============================================================================
+\usepackage{cleveref}
+% Better cross-references (auto "Table", "Figure", "Algorithm", ...)
+
+% Set names for common counters so `\cref` / `\Cref` print the desired words
+\crefname{table}{table}{tables}
+\Crefname{table}{Table}{Tables}
+\crefname{figure}{figure}{figures}
+\Crefname{figure}{Figure}{Figures}
+\crefname{algorithm}{algorithm}{algorithms}
+\Crefname{algorithm}{Algorithm}{Algorithms}
+\crefname{equation}{equation}{equations}
+\Crefname{equation}{Equation}{Equations}
+\crefname{section}{section}{sections}
+\Crefname{section}{Section}{Sections}
+\crefname{subsection}{section}{sections}
+\Crefname{subsection}{Section}{Sections}
+\crefname{subsubsection}{section}{sections}
+\Crefname{subsubsection}{Section}{Sections}
+
+% ============================================================================
 % Colors
 % ============================================================================
 \usepackage{color, xcolor}
@@ -89,12 +114,14 @@
 % ============================================================================
 % Bibliography
 % ============================================================================
-\usepackage[backend = biber,
-            style = numeric,
-            date = long,     % Long: 24th Mar. 1997 | Short: 24/03/1997
-            sorting = none,
-            maxcitenames = 3,   % max names to include before et. al.
-            ]{biblatex}
+\usepackage[backend=biber,
+            style=ieee,
+            sorting=none,
+            urldate=long,
+            maxcitenames=2,
+            natbib=true,
+            cite=numeric,
+            citestyle=numeric-comp]{biblatex}
 % Customize the look of your citations and bibliography
 \addbibresource{bibliography.bib}
 % Declare the bibliography resource
