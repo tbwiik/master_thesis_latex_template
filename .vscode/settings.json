@@ -1,0 +1,5 @@
+{
+    "ltex.enabled": true,
+    "ltex.language": "en-US",
+    "latex-workshop.latex.outDir": "build"
+}
